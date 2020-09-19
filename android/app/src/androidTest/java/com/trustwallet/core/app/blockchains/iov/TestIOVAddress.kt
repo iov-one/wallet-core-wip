@@ -26,7 +26,7 @@ class TestIOVAddress {
         val address = AnyAddress(publicKey, CoinType.IOV)
         val expected = AnyAddress("star1gfpfk3s8xnupdce7pgt3z7mf79clvkw6px89ne", CoinType.IOV)
 
-        assertEquals(publicKey.data().toHex(), "starpub1addwnpepq2svqq4xaxq4jxey3nx69zznxjuhke02fm2q0a45lt5h2uw78n9qq2jpw7g")
+        assertEquals(publicKey.data().toHex(), "0x035df185566521d6a7802319ee06e1a28e97b7772dfb5fdd13ca6f0575518968e4")
         assertEquals(address.description(), expected.description())
     }
 }
