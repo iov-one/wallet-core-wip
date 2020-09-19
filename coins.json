@@ -979,27 +979,27 @@
   },
   {
     "id": "iov",
-    "name": "IOV",
-    "symbol": "STAR",
+    "name": "IOV Token",
+    "symbol": "IOV",
     "coinId": 234,
     "decimals": 6,
     "blockchain": "Cosmos",
-    "derivationPath": "m/44'/494'/0'/0/0",
+    "derivationPath": "m/44'/234'/0'/0/0",
     "curve": "secp256k1",
     "publicKeyType": "secp256k1",
-    "hrp": "band",
+    "hrp": "star",
     "explorer": {
-      "url": "https://scan-wenchang-testnet2.bandchain.org/",
-      "txPath": "/tx/",
+      "url": "https://big-dipper.iov-mainnet-2.iov.one/",
+      "txPath": "/transactions/",
       "accountPath": "/account/",
-      "sampleTx": "473264551D3063A9EC64EC251C61BE92DDDFCF6CC46D026D1E574D83D5447173",
-      "sampleAccount": "band12nmsm9khdsv0tywge43q3zwj8kkj3hvup9rltp"
+      "sampleTx": "050090909C3C2037A0C219D64CC9B249ABE61A6C9651855D75F8924A4D053E4A",
+      "sampleAccount": "star15u8thlfrsw6v9c650h298z23tvdw4pk3sx38nz"
     },
     "info": {
-      "url": "https://bandprotocol.com/",
-      "client": "https://github.com/bandprotocol/bandchain",
-      "clientPublic": "https://api-wt2-lb.bandchain.org",
-      "clientDocs": "https://docs.bandchain.org/"
+      "url": "https://starname.me/",
+      "client": "https://github.com/iov-one/iovns",
+      "clientPublic": "https://rpc-private-iov-mainnet-2.iov.one/",
+      "clientDocs": "https://docs.starname.me/"
     }
   },
   {
