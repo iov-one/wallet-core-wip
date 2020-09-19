@@ -979,7 +979,7 @@
   },
   {
     "id": "iov",
-    "name": "IOV Token",
+    "name": "IOV",
     "symbol": "IOV",
     "coinId": 234,
     "decimals": 6,
