@@ -57,7 +57,7 @@ class TestIOVSigner {
 
         val signingInput = Cosmos.SigningInput.newBuilder().apply {
             accountNumber = 1037
-            chainId = "band-wenchang-testnet2"
+            chainId = "iov-mainnet-2"
             memo = ""
             sequence = 8
             fee = cosmosFee
@@ -78,10 +78,10 @@ class TestIOVSigner {
         val json = """
         {
             "accountNumber": "8733",
-            "chainId": "band-wenchang-testnet2",
+            "chainId": "iov-mainnet-2",
             "fee": {
                 "amounts": [{
-                    "denom": "uband",
+                    "denom": "uiov",
                     "amount": "5000"
                 }],
                 "gas": "200000"
@@ -92,7 +92,7 @@ class TestIOVSigner {
                     "fromAddress": "band1jf9aaj9myrzsnmpdr7twecnaftzmku2mgms4n3",
                     "toAddress": "band1pnndgfwsrff86263xzpc5cd3t6yfvgjyqc87jh",
                     "amounts": [{
-                        "denom": "uband",
+                        "denom": "uiov",
                         "amount": "995000"
                     }]
                 }
