@@ -13,22 +13,22 @@
 #include <gtest/gtest.h>
 
 
-TEST(TWBandChainCoinType, TWCoinType) {
-auto symbol = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeBandChain));
+TEST(TWIOVCoinType, TWCoinType) {
+auto symbol = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeIOV));
 auto txId = TWStringCreateWithUTF8Bytes("473264551D3063A9EC64EC251C61BE92DDDFCF6CC46D026D1E574D83D5447173");
-auto txUrl = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeBandChain, txId));
+auto txUrl = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeIOV, txId));
 auto accId = TWStringCreateWithUTF8Bytes("band12nmsm9khdsv0tywge43q3zwj8kkj3hvup9rltp");
-auto accUrl = WRAPS(TWCoinTypeConfigurationGetAccountURL(TWCoinTypeBandChain, accId));
-auto id = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeBandChain));
-auto name = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeBandChain));
+auto accUrl = WRAPS(TWCoinTypeConfigurationGetAccountURL(TWCoinTypeIOV, accId));
+auto id = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeIOV));
+auto name = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeIOV));
 
-ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeBandChain), 6);
-ASSERT_EQ(TWBlockchainCosmos, TWCoinTypeBlockchain(TWCoinTypeBandChain));
-ASSERT_EQ(0x0, TWCoinTypeP2shPrefix(TWCoinTypeBandChain));
-ASSERT_EQ(0x0, TWCoinTypeStaticPrefix(TWCoinTypeBandChain));
-assertStringsEqual(symbol, "BAND");
-assertStringsEqual(txUrl, "https://scan-wenchang-testnet2.bandchain.org//tx/473264551D3063A9EC64EC251C61BE92DDDFCF6CC46D026D1E574D83D5447173");
-assertStringsEqual(accUrl, "https://scan-wenchang-testnet2.bandchain.org//account/band12nmsm9khdsv0tywge43q3zwj8kkj3hvup9rltp");
-assertStringsEqual(id, "band");
-assertStringsEqual(name, "BandChain");
+ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeIOV), 6);
+ASSERT_EQ(TWBlockchainCosmos, TWCoinTypeBlockchain(TWCoinTypeIOV));
+ASSERT_EQ(0x0, TWCoinTypeP2shPrefix(TWCoinTypeIOV));
+ASSERT_EQ(0x0, TWCoinTypeStaticPrefix(TWCoinTypeIOV));
+assertStringsEqual(symbol, "IOV");
+assertStringsEqual(txUrl, "https://scan-wenchang-testnet2.IOV.org//tx/473264551D3063A9EC64EC251C61BE92DDDFCF6CC46D026D1E574D83D5447173");
+assertStringsEqual(accUrl, "https://scan-wenchang-testnet2.IOV.org//account/band12nmsm9khdsv0tywge43q3zwj8kkj3hvup9rltp");
+assertStringsEqual(id, "iov");
+assertStringsEqual(name, "IOV Token");
 }
