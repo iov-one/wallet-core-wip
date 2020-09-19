@@ -6,22 +6,22 @@
 import TrustWalletCore
 import XCTest
 
-class BandChainTests: XCTestCase {
+class IOVTests: XCTestCase {
     let privateKey = PrivateKey(data: Data(hexString: "1037f828ca313f4c9e120316e8e9ff25e17f07fe66ba557d5bc5e2eeb7cba8f6")!)!
 
     func testAddress() {
-        let address = CoinType.bandChain.deriveAddress(privateKey: privateKey)
+        let address = CoinType.iov.deriveAddress(privateKey: privateKey)
 
         XCTAssertEqual(address, "band1jf9aaj9myrzsnmpdr7twecnaftzmku2mgms4n3")
-        XCTAssertTrue(CoinType.bandChain.validate(address: "band1pnndgfwsrff86263xzpc5cd3t6yfvgjyqc87jh"))
-        XCTAssertTrue(CoinType.bandChain.validate(address: "band1jf9aaj9myrzsnmpdr7twecnaftzmku2mgms4n3"))
-        XCTAssertFalse(CoinType.bandChain.validate(address: "cosmos1hsk6jryyqjfhp5dhc55tc9jtckygx0eph6dd02"))
+        XCTAssertTrue(CoinType.iov.validate(address: "band1pnndgfwsrff86263xzpc5cd3t6yfvgjyqc87jh"))
+        XCTAssertTrue(CoinType.iov.validate(address: "band1jf9aaj9myrzsnmpdr7twecnaftzmku2mgms4n3"))
+        XCTAssertFalse(CoinType.iov.validate(address: "cosmos1hsk6jryyqjfhp5dhc55tc9jtckygx0eph6dd02"))
     }
 
     func testSigningTransaction() {
 
         let publicKey = privateKey.getPublicKeySecp256k1(compressed: true)
-        let fromAddress = AnyAddress(publicKey: publicKey, coin: .bandChain).description
+        let fromAddress = AnyAddress(publicKey: publicKey, coin: .iov).description
 
         let sendCoinsMessage = CosmosMessage.Send.with {
             $0.fromAddress = fromAddress
@@ -54,7 +54,7 @@ class BandChainTests: XCTestCase {
             $0.privateKey = privateKey.data
         }
 
-        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .bandChain)
+        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .iov)
 
         let expectedJSON: String =
                 """
@@ -134,7 +134,7 @@ class BandChainTests: XCTestCase {
             $0.privateKey = privateKey.data
         }
 
-        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .bandChain)
+        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .iov)
 
         let expectedJSON = """
                            {
@@ -207,7 +207,7 @@ class BandChainTests: XCTestCase {
             $0.privateKey = privateKey.data
         }
 
-        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .bandChain)
+        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .iov)
 
         let expectedJSON = """
                            {
@@ -280,7 +280,7 @@ class BandChainTests: XCTestCase {
             $0.privateKey = privateKey.data
         }
 
-        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .bandChain)
+        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .iov)
 
         let expectedJSON = """
                            {
@@ -358,7 +358,7 @@ class BandChainTests: XCTestCase {
             $0.privateKey = privateKey.data
         }
 
-        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .bandChain)
+        let output: CosmosSigningOutput = AnySigner.sign(input: input, coin: .iov)
 
         let expectedJSON = """
                            {
