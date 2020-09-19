@@ -15,9 +15,9 @@
 
 TEST(TWIOVCoinType, TWCoinType) {
 auto symbol = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeIOV));
-auto txId = TWStringCreateWithUTF8Bytes("473264551D3063A9EC64EC251C61BE92DDDFCF6CC46D026D1E574D83D5447173");
+auto txId = TWStringCreateWithUTF8Bytes("5E189F10BE129169096096B6AD39547631780E31089B1C56C1DB35C92FD39801");
 auto txUrl = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeIOV, txId));
-auto accId = TWStringCreateWithUTF8Bytes("band12nmsm9khdsv0tywge43q3zwj8kkj3hvup9rltp");
+auto accId = TWStringCreateWithUTF8Bytes("star1mj92w3zhd89znd26qq6yarpr86yc573khrm0hv");
 auto accUrl = WRAPS(TWCoinTypeConfigurationGetAccountURL(TWCoinTypeIOV, accId));
 auto id = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeIOV));
 auto name = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeIOV));
@@ -27,8 +27,8 @@ ASSERT_EQ(TWBlockchainCosmos, TWCoinTypeBlockchain(TWCoinTypeIOV));
 ASSERT_EQ(0x0, TWCoinTypeP2shPrefix(TWCoinTypeIOV));
 ASSERT_EQ(0x0, TWCoinTypeStaticPrefix(TWCoinTypeIOV));
 assertStringsEqual(symbol, "IOV");
-assertStringsEqual(txUrl, "https://scan-wenchang-testnet2.IOV.org//tx/473264551D3063A9EC64EC251C61BE92DDDFCF6CC46D026D1E574D83D5447173");
-assertStringsEqual(accUrl, "https://scan-wenchang-testnet2.IOV.org//account/band12nmsm9khdsv0tywge43q3zwj8kkj3hvup9rltp");
+assertStringsEqual(txUrl, "https://big-dipper.iov-mainnet-2.iov.one/transactions/5E189F10BE129169096096B6AD39547631780E31089B1C56C1DB35C92FD39801");
+assertStringsEqual(accUrl, "https://big-dipper.iov-mainnet-2.iov.one/account/star1mj92w3zhd89znd26qq6yarpr86yc573khrm0hv");
 assertStringsEqual(id, "iov");
-assertStringsEqual(name, "IOV Token");
+assertStringsEqual(name, "IOV");
 }
