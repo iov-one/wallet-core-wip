@@ -188,8 +188,8 @@ class CoinAddressDerivationTests: XCTestCase {
                     let expectedResult = "band1624hqgend0s3d94z68fyka2y5jak6vd7u0l50r"
                     assertCoinDerivation(coin, expectedResult, derivedAddress, address)
                 case .iov:
-                    let expectedResult = "band1624hqgend0s3d94z68fyka2y5jak6vd7u0l50r" // TODO FDYMYLJA CHANGE
-                    AssetCoinDerivation(coin, expectedResult, derivedAddress, address)
+                    let expectedResult = "star1vx5uwgjzrmdmt0evmgaxmejnzplkuhqs8kqt4m"
+                    assertCoinDerivation(coin, expectedResult, derivedAddress, address)
                 case .cardano:
                     let expectedResult = "addr1snpa4z7ntyfszv7ckquprdw75w4qjqh0qmya9jtkpxxlzxghlqyvv7l0yjamh8fxraw06p3ua8sj2g2gv98v4849s43t9g2999kquuu5egnprk"
                     assertCoinDerivation(coin, expectedResult, derivedAddress, address)
