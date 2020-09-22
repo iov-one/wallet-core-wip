@@ -5,6 +5,7 @@
 // file LICENSE at the root of the source code distribution tree.
 import TrustWalletCore
 import XCTest
+import org.junit.Assert.assertEquals // TODO: delete this after it shows which character is wrong
 
 class IOVTests: XCTestCase {
     let privateKey = PrivateKey(data: Data(hexString: "1037f828ca313f4c9e120316e8e9ff25e17f07fe66ba557d5bc5e2eeb7cba8f6")!)!
@@ -98,7 +99,7 @@ class IOVTests: XCTestCase {
                   }
                 }
                 """
-        XCTAssertEqual(expectedJSON, output.json) // TODO: delete this after it shows which character is wrong
+        assertEquals(expectedJSON, output.json) // TODO: delete this after it shows which character is wrong
         XCTAssertJSONEqual(expectedJSON, output.json)
     }
 
