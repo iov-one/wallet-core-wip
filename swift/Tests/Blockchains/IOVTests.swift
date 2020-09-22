@@ -6,17 +6,27 @@
 import TrustWalletCore
 import XCTest
 
+// 4. TODO: delete this
+private extension Array {
+  subscript(safely index: Index) -> Element? {
+    if self.indices.contains(index) {
+      return self[index]
+    } else {
+      return nil
+    }
+  }
+}
+
 class IOVTests: XCTestCase {
 // TODO: delete this
 // https://vojtastavik.com/2019/11/28/custom-multiline-assertion/
 // 1.
-func XCTAssertEqual(
+func CustomAssertEqual(
   _ text: String,
   multiline reference: String,
   file: StaticString = #file,
   line: UInt = #line
 ) {
-
   // 2.
   let textLines = text.split(separator: "\n", omittingEmptySubsequences: false)
   let referenceLines = reference.split(separator: "\n", omittingEmptySubsequences: false)
@@ -35,17 +45,6 @@ func XCTAssertEqual(
       XCTAssertEqual(left, right, file: file, line: line)
     } else {
       XCTAssertEqual(left, right, file: file, line: line)
-    }
-  }
-}
-
-// 4.
-private extension Array {
-  subscript(safely index: Index) -> Element? {
-    if self.indices.contains(index) {
-      return self[index]
-    } else {
-      return nil
     }
   }
 } // ~TODO
@@ -141,7 +140,7 @@ private extension Array {
                   }
                 }
                 """
-        assertEqual(expectedJSON, multiline: output.json) // TODO: delete this after it shows which character is wrong
+        CustomAssertEqual(expectedJSON, output.json) // TODO: delete this after it shows which character is wrong
         XCTAssertJSONEqual(expectedJSON, output.json)
     }
 
