@@ -140,7 +140,7 @@ func CustomAssertEqual(
                   }
                 }
                 """
-        CustomAssertEqual(expectedJSON, output.json) // TODO: delete this after it shows which character is wrong
+        CustomAssertEqual(expectedJSON, multiline: output.json) // TODO: delete this after it shows which character is wrong
         XCTAssertJSONEqual(expectedJSON, output.json)
     }
 
