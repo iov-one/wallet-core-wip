@@ -10,7 +10,9 @@ import com.trustwallet.core.app.utils.toHex
 import com.trustwallet.core.app.utils.toHexByteArray
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import wallet.core.jni.AnyAddress
 import wallet.core.jni.CoinType.IOV
+import wallet.core.jni.PrivateKey
 
 class TestIOVAddress {
 
