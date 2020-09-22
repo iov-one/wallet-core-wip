@@ -102,6 +102,6 @@ class TestIOVSigner {
         val key = "c9b0a273831931aa4a5f8d1a570d5021dda91d3319bd3819becdaabfb7b44e3b".toHexByteArray()
         val result = AnySigner.signJSON(json, key, IOV.value())
 
-        assertEquals(result, """{"mode":"block","tx":{"fee":{"amount":[{"amount":"5000","denom":"uiov"}], "gas":"200000"},"memo":"Testing","msg":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"amount":"995000","denom":"uiov"}],"from_address":"band1jf9aaj9myrzsnmpdr7twecnaftzmku2mgms4n3","to_address":"band1pnndgfwsrff86263xzpc5cd3t6yfvgjyqc87jh"}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A6EsukEXB53GhohQVeDpxtkeH8KQIayd/Co/ApYRYkTm"},"signature":"tnDMD2JKRXHIlYTtp9BndnjA4lYBvnQzWxuGf0672Y9+s1wV+OSxDO51sx4TyWj3VOHVdJCVSlz9BR21S0OKhQ=="}]}}""")
+        assertEquals(result, """{"mode":"block","tx":{"fee":{"amount":[{"amount":"5000","denom":"uiov"}],"gas":"200000"},"memo":"Testing","msg":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"amount":"995000","denom":"uiov"}],"from_address":"band1jf9aaj9myrzsnmpdr7twecnaftzmku2mgms4n3","to_address":"band1pnndgfwsrff86263xzpc5cd3t6yfvgjyqc87jh"}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"A6EsukEXB53GhohQVeDpxtkeH8KQIayd/Co/ApYRYkTm"},"signature":"tnDMD2JKRXHIlYTtp9BndnjA4lYBvnQzWxuGf0672Y9+s1wV+OSxDO51sx4TyWj3VOHVdJCVSlz9BR21S0OKhQ=="}]}}""")
     }
 }
