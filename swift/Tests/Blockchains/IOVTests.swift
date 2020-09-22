@@ -98,6 +98,7 @@ class IOVTests: XCTestCase {
                   }
                 }
                 """
+        XCTAssertEqual(expectedJSON, output.json) // TODO: delete this after it shows which character is wrong
         XCTAssertJSONEqual(expectedJSON, output.json)
     }
 
