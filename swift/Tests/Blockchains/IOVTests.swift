@@ -12,9 +12,9 @@ class IOVTests: XCTestCase {
     func testAddress() {
         let address = CoinType.iov.deriveAddress(privateKey: privateKey)
 
-        XCTAssertEqual(address, "band1jf9aaj9myrzsnmpdr7twecnaftzmku2mgms4n3")
-        XCTAssertTrue(CoinType.iov.validate(address: "band1pnndgfwsrff86263xzpc5cd3t6yfvgjyqc87jh"))
-        XCTAssertTrue(CoinType.iov.validate(address: "band1jf9aaj9myrzsnmpdr7twecnaftzmku2mgms4n3"))
+        XCTAssertEqual(address, "star1jf9aaj9myrzsnmpdr7twecnaftzmku2msw77u4")
+        XCTAssertTrue(CoinType.iov.validate(address: "star1478t4fltj689nqu83vsmhz27quk7uggjwe96yk"))
+        XCTAssertTrue(CoinType.iov.validate(address: "star1y4t33z7ugz2323vnuhjwftz33quns0t4znr7ps"))
         XCTAssertFalse(CoinType.iov.validate(address: "cosmos1hsk6jryyqjfhp5dhc55tc9jtckygx0eph6dd02"))
     }
 
@@ -81,7 +81,7 @@ class IOVTests: XCTestCase {
                               "denom": "uband"
                             }
                           ],
-                          "from_address": "band1jf9aaj9myrzsnmpdr7twecnaftzmku2mgms4n3",
+                          "from_address": "star1jf9aaj9myrzsnmpdr7twecnaftzmku2msw77u4",
                           "to_address": "band1pnndgfwsrff86263xzpc5cd3t6yfvgjyqc87jh"
                         }
                       }
