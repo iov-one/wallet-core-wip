@@ -18,36 +18,6 @@ private extension Array {
 }
 
 class IOVTests: XCTestCase {
-// TODO: delete this
-// https://vojtastavik.com/2019/11/28/custom-multiline-assertion/
-// 1.
-func CustomAssertEqual(
-  _ text: String,
-  multiline reference: String,
-  file: StaticString = #file,
-  line: UInt = #line
-) {
-  // 2.
-  let textLines = text.split(separator: "\n", omittingEmptySubsequences: false)
-  let referenceLines = reference.split(separator: "\n", omittingEmptySubsequences: false)
-
-  // 3.
-  for idx in 0..<max(textLines.count, referenceLines.count) {
-    // 5.
-    let left = textLines[safely: idx]
-    let right = referenceLines[safely: idx]
-
-    // 6.
-    let line = line + UInt(1 + idx)
-
-    // 7.
-    if let left = left, let right = right {
-      XCTAssertEqual(left, right, file: file, line: line)
-    } else {
-      XCTAssertEqual(left, right, file: file, line: line)
-    }
-  }
-} // ~TODO
 
     let privateKey = PrivateKey(data: Data(hexString: "1037f828ca313f4c9e120316e8e9ff25e17f07fe66ba557d5bc5e2eeb7cba8f6")!)!
 
@@ -134,13 +104,12 @@ func CustomAssertEqual(
                           "type": "tendermint/PubKeySecp256k1",
                           "value": "A13xhVZlIdangCMZ7gbhoo6Xt3ct+1/dE8pvBXVRiWjk"
                         },
-                        "signature": "C6X5J08I1kkebqxa9LiFRRSJsp8U9E/IulruGTtOvpcpn/kMwWAxbFTDzvrDV5SnTWDSlimTkeZq8OuwL7j9nQ=="
+                        "signature": "yrxHeUlJLzeXY18CsZ/+KG+VirhwLYNL1qbBusOc/twOpS9lQOH3hvnlbhSAgzAP5RAEs0oWYvRIJ2658VfS/g=="
                       }
                     ]
                   }
                 }
                 """
-        CustomAssertEqual(expectedJSON, multiline: output.json) // TODO: delete this after it shows which character is wrong
         XCTAssertJSONEqual(expectedJSON, output.json)
     }
 
