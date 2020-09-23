@@ -6,17 +6,6 @@
 import TrustWalletCore
 import XCTest
 
-// 4. TODO: delete this
-private extension Array {
-  subscript(safely index: Index) -> Element? {
-    if self.indices.contains(index) {
-      return self[index]
-    } else {
-      return nil
-    }
-  }
-}
-
 class IOVTests: XCTestCase {
 
     let privateKey = PrivateKey(data: Data(hexString: "1037f828ca313f4c9e120316e8e9ff25e17f07fe66ba557d5bc5e2eeb7cba8f6")!)!
