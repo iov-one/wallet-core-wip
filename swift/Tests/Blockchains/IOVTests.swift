@@ -26,10 +26,10 @@ class IOVTests: XCTestCase {
 
         let sendCoinsMessage = CosmosMessage.Send.with {
             $0.fromAddress = fromAddress
-            $0.toAddress = "band1pnndgfwsrff86263xzpc5cd3t6yfvgjyqc87jh"
+            $0.toAddress = "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu"
             $0.amounts = [CosmosAmount.with {
                 $0.amount = 1000000
-                $0.denom = "uband"
+                $0.denom = "uiov"
             }]
         }
 
@@ -41,7 +41,7 @@ class IOVTests: XCTestCase {
             $0.gas = 200000
             $0.amounts = [CosmosAmount.with {
                 $0.amount = 100
-                $0.denom = "uband"
+                $0.denom = "uiov"
             }]
         }
 
@@ -66,7 +66,7 @@ class IOVTests: XCTestCase {
                       "amount": [
                         {
                           "amount": "100",
-                          "denom": "uband"
+                          "denom": "uiov"
                         }
                       ],
                       "gas": "200000"
@@ -79,11 +79,11 @@ class IOVTests: XCTestCase {
                           "amount": [
                             {
                               "amount": "1000000",
-                              "denom": "uband"
+                              "denom": "uiov"
                             }
                           ],
                           "from_address": "star1jf9aaj9myrzsnmpdr7twecnaftzmku2msw77u4",
-                          "to_address": "band1pnndgfwsrff86263xzpc5cd3t6yfvgjyqc87jh"
+                          "to_address": "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu"
                         }
                       }
                     ],
@@ -93,7 +93,7 @@ class IOVTests: XCTestCase {
                           "type": "tendermint/PubKeySecp256k1",
                           "value": "A13xhVZlIdangCMZ7gbhoo6Xt3ct+1/dE8pvBXVRiWjk"
                         },
-                        "signature": "yrxHeUlJLzeXY18CsZ/+KG+VirhwLYNL1qbBusOc/twOpS9lQOH3hvnlbhSAgzAP5RAEs0oWYvRIJ2658VfS/g=="
+                        "signature": "pKyoyA7ODGW9f9yFE2LDFN0sAlHmCBoV5Ek27wHO5goclCKG3M6CYgYbU1vpnKwcF5bgfLqH9Po72zRfQVR2Fg=="
                       }
                     ]
                   }
@@ -105,11 +105,11 @@ class IOVTests: XCTestCase {
     func testStaking() {
         // https://scan-wenchang-testnet2.bandchain.org/tx/ca86ad13b7d3add04a926f9f6184f1134b964f4f67f39c3a7169540553119915
         let stakeMessage = CosmosMessage.Delegate.with {
-            $0.delegatorAddress = "band13nzgys7y9c693u0pq089an4pq6q87hf9kqgkrz"
-            $0.validatorAddress = "bandvaloper13fwr8rmugu2mfuurfx4sfmyv05haw9sujnqzd8"
+            $0.delegatorAddress = "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu"
+            $0.validatorAddress = "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z"
             $0.amount = CosmosAmount.with {
                 $0.amount = 1000000
-                $0.denom = "uband"
+                $0.denom = "uiov"
             }
         }
 
@@ -121,7 +121,7 @@ class IOVTests: XCTestCase {
             $0.gas = 200000
             $0.amounts = [CosmosAmount.with {
                 $0.amount = 100
-                $0.denom = "uband"
+                $0.denom = "uiov"
             }]
         }
 
@@ -145,7 +145,7 @@ class IOVTests: XCTestCase {
                                  "amount": [
                                    {
                                      "amount": "100",
-                                     "denom": "uband"
+                                     "denom": "uiov"
                                    }
                                  ],
                                  "gas": "200000"
@@ -157,10 +157,10 @@ class IOVTests: XCTestCase {
                                    "value": {
                                      "amount": {
                                        "amount": "1000000",
-                                       "denom": "uband"
+                                       "denom": "uiov"
                                      },
-                                     "delegator_address": "band13nzgys7y9c693u0pq089an4pq6q87hf9kqgkrz",
-                                     "validator_address": "bandvaloper13fwr8rmugu2mfuurfx4sfmyv05haw9sujnqzd8"
+                                     "delegator_address": "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu",
+                                     "validator_address": "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z"
                                    }
                                  }
                                ],
@@ -170,7 +170,7 @@ class IOVTests: XCTestCase {
                                      "type": "tendermint/PubKeySecp256k1",
                                      "value": "A13xhVZlIdangCMZ7gbhoo6Xt3ct+1/dE8pvBXVRiWjk"
                                    },
-                                   "signature": "My+OzXqBOImtuDOoqoO9YBdlAhl6weWZvtJfkm4KDZ8I/wnQHNFBa41ql1e2LYSk3jnR/14LZ6E3pY8YW3WU9w=="
+                                   "signature": "IOP3nSocf8hsI2Z+p/lqXHG6mCtioOYpFUZZTCdJMG1t5GF6HtMS8N6ZH4li83qq8Jo580arqu9jZnnpomaxMg=="
                                  }
                                ]
                              }
@@ -182,8 +182,8 @@ class IOVTests: XCTestCase {
     func testWithdraw() {
         // https://scan-wenchang-testnet2.bandchain.org/tx/0df1a6742647224646ed0213abfc012fca54ca42311414c158a3b8799fb61d56
         let withdrawMessage = CosmosMessage.WithdrawDelegationReward.with {
-            $0.delegatorAddress = "band13nzgys7y9c693u0pq089an4pq6q87hf9kqgkrz"
-            $0.validatorAddress = "bandvaloper13fwr8rmugu2mfuurfx4sfmyv05haw9sujnqzd8"
+            $0.delegatorAddress = "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu"
+            $0.validatorAddress = "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z"
         }
 
         let message = CosmosMessage.with {
@@ -193,7 +193,7 @@ class IOVTests: XCTestCase {
         let fee = CosmosFee.with {
             $0.amounts = [CosmosAmount.with {
                 $0.amount = 100
-                $0.denom = "uband"
+                $0.denom = "uiov"
             }]
             $0.gas = 200000
         }
@@ -218,7 +218,7 @@ class IOVTests: XCTestCase {
                                  "amount": [
                                    {
                                      "amount": "100",
-                                     "denom": "uband"
+                                     "denom": "uiov"
                                    }
                                  ],
                                  "gas": "200000"
@@ -228,8 +228,8 @@ class IOVTests: XCTestCase {
                                  {
                                    "type": "cosmos-sdk/MsgWithdrawDelegationReward",
                                    "value": {
-                                     "delegator_address": "band13nzgys7y9c693u0pq089an4pq6q87hf9kqgkrz",
-                                     "validator_address": "bandvaloper13fwr8rmugu2mfuurfx4sfmyv05haw9sujnqzd8"
+                                     "delegator_address": "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu",
+                                     "validator_address": "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z"
                                    }
                                  }
                                ],
@@ -239,7 +239,7 @@ class IOVTests: XCTestCase {
                                      "type": "tendermint/PubKeySecp256k1",
                                      "value": "A13xhVZlIdangCMZ7gbhoo6Xt3ct+1/dE8pvBXVRiWjk"
                                    },
-                                   "signature": "yV2ORYqs66hq9wECEqOgLoBx7OghdRCnN8MqZk5cY/40PAm1EGjFKkdNVLNTXuBrskcT0pP/AT0XfMyywvhkWg=="
+                                   "signature": "YDUdaBMbP38OlxAaiFvHCOA1vnDkaXcuYR4ZuX9qbDtKX3zIKAEK7o1SqiyTU3WHJ1uNFukoZAz1Me8VGhIijw=="
                                  }
                                ]
                              }
@@ -251,11 +251,11 @@ class IOVTests: XCTestCase {
     func testUndelegate() {
         // https://scan-wenchang-testnet2.bandchain.org/tx/cbf84d227f5a8d36e7b529d94b0f93e7107d3706148c79d8c539c09ce4698447
         let unstakeMessage = CosmosMessage.Undelegate.with {
-            $0.delegatorAddress = "band13tug898kgtwprg7fevzzqgh45draa3cyffw3kp"
-            $0.validatorAddress = "bandvaloper1jp633fleakzv4uxxvl707j9u2jj6j5x2rg7glv"
+            $0.delegatorAddress = "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu"
+            $0.validatorAddress = "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z"
             $0.amount = CosmosAmount.with {
                 $0.amount = 500000
-                $0.denom = "uband"
+                $0.denom = "uiov"
             }
         }
 
@@ -267,7 +267,7 @@ class IOVTests: XCTestCase {
             $0.gas = 200000
             $0.amounts = [CosmosAmount.with {
                 $0.amount = 100
-                $0.denom = "uband"
+                $0.denom = "uiov"
             }]
         }
 
@@ -291,7 +291,7 @@ class IOVTests: XCTestCase {
                                  "amount": [
                                    {
                                      "amount": "100",
-                                     "denom": "uband"
+                                     "denom": "uiov"
                                    }
                                  ],
                                  "gas": "200000"
@@ -303,10 +303,10 @@ class IOVTests: XCTestCase {
                                    "value": {
                                      "amount": {
                                        "amount": "500000",
-                                       "denom": "uband"
+                                       "denom": "uiov"
                                      },
-                                     "delegator_address": "band13tug898kgtwprg7fevzzqgh45draa3cyffw3kp",
-                                     "validator_address": "bandvaloper1jp633fleakzv4uxxvl707j9u2jj6j5x2rg7glv"
+                                     "delegator_address": "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu",
+                                     "validator_address": "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z"
                                    }
                                  }
                                ],
@@ -316,7 +316,7 @@ class IOVTests: XCTestCase {
                                      "type": "tendermint/PubKeySecp256k1",
                                      "value": "A13xhVZlIdangCMZ7gbhoo6Xt3ct+1/dE8pvBXVRiWjk"
                                    },
-                                   "signature": "mdWnaIfRASZoCs0HKEk0dCL3S3ky1fbh1wp76M7Cov0D8fiByoxOfNknGgDwZecmwhZ4Gf66E+25B5hBCJpY/A=="
+                                   "signature": "0qv2RtnJ+5Kw3jfRC8tB9MdSIATtg7vjg0ogwGwoa2RbIYjUl+BYdTB7aXfmMfrsw+ZDhl87TGOEDNc45B67QQ=="
                                  }
                                ]
                              }
@@ -328,12 +328,12 @@ class IOVTests: XCTestCase {
     func testRedlegate() {
         // https://scan-wenchang-testnet2.bandchain.org/tx/92b351e9aa2f7faae6cd556db04737a1fff778ea0306e2dfb064ccec76a41b13
         let restakeMessage = CosmosMessage.BeginRedelegate.with {
-            $0.delegatorAddress = "band1hln9scsl9yqup8nxyum06rmggql5m5zqzslg52"
-            $0.validatorSrcAddress = "bandvaloper1hln9scsl9yqup8nxyum06rmggql5m5zqwxmt3p"
-            $0.validatorDstAddress = "bandvaloper1hydxm5h8v6tty2x623az65x3r39tl3paxyxtr0"
+            $0.delegatorAddress = "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu"
+            $0.validatorSrcAddress = "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z"
+            $0.validatorDstAddress = "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z"
             $0.amount = CosmosAmount.with {
                 $0.amount = 500000
-                $0.denom = "uband"
+                $0.denom = "uiov"
             }
         }
 
@@ -345,7 +345,7 @@ class IOVTests: XCTestCase {
             $0.gas = 200000
             $0.amounts = [CosmosAmount.with {
                 $0.amount = 100
-                $0.denom = "uband"
+                $0.denom = "uiov"
             }]
         }
 
@@ -369,7 +369,7 @@ class IOVTests: XCTestCase {
                                  "amount": [
                                    {
                                      "amount": "100",
-                                     "denom": "uband"
+                                     "denom": "uiov"
                                    }
                                  ],
                                  "gas": "200000"
@@ -381,11 +381,11 @@ class IOVTests: XCTestCase {
                                    "value": {
                                      "amount": {
                                        "amount": "500000",
-                                       "denom": "uband"
+                                       "denom": "uiov"
                                      },
-                                     "delegator_address": "band1hln9scsl9yqup8nxyum06rmggql5m5zqzslg52",
-                                     "validator_dst_address": "bandvaloper1hydxm5h8v6tty2x623az65x3r39tl3paxyxtr0",
-                                     "validator_src_address": "bandvaloper1hln9scsl9yqup8nxyum06rmggql5m5zqwxmt3p"
+                                     "delegator_address": "star1g7sfzcxfuzqn2xtxr246h8zjcxrpvdmn8tk5gu",
+                                     "validator_dst_address": "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z",
+                                     "validator_src_address": "starvaloper1mw08m28g2gt62py9yufdwduz52al0wn3fmrg6z"
                                    }
                                  }
                                ],
@@ -395,7 +395,7 @@ class IOVTests: XCTestCase {
                                      "type": "tendermint/PubKeySecp256k1",
                                      "value": "A13xhVZlIdangCMZ7gbhoo6Xt3ct+1/dE8pvBXVRiWjk"
                                    },
-                                   "signature": "Y+nCZxjvrXPs++VDLiJxDQmp/59Mdwv7OEhgaH4oObtZ7N9+ZVraAiAcxJO26bbcW3cptFf88jxGpWdp6XG9Tg=="
+                                   "signature": "atHXVoNIa6hA7PcG1z/5t16kMhDykuBSf5o+wXfwTz8Cp3KnNm9idL/BDjuTkXZE8rCzjTmchGzTC7c4vFU6lg=="
                                  }
                                ]
                              }
